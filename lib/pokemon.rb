@@ -1,2 +1,20 @@
+# ...is responable for saving, adding, changing anything about pokemom
 class Pokemon
+  
+  attr_accessor :id, :name, :type, :db
+  
+  def initialize(attributes)
+    self.name = name
+    self.type = type
+  end
+  
+  def self.save(name, type, @db)
+    sql = `INSERT INTO ? (name, type) VLAUES (?, ?);`
+    DB:[conn].execute(sql, @db)
+  
+  def self.find(some_id)
+    sql = `SELECT * FROM pokemon WHERE id = ?`
+    DB[:conn].execute(sql, some_id)
+  end
+ 
 end
