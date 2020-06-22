@@ -10,7 +10,7 @@ class Pokemon
   
   def self.save(name, type, @db)
     sql = `INSERT INTO ? (name, type) VLAUES (?, ?);`
-    DB:[conn].execute(sql, @db)
+    DB[:conn].execute(sql, self.db, name, type)
   
   def self.find(some_id)
     sql = `SELECT * FROM pokemon WHERE id = ?`
