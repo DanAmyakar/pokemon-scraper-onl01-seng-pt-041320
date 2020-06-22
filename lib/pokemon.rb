@@ -8,7 +8,7 @@ class Pokemon
     self.type = type
   end
   
-  def self.save(name, type, @db)
+  def self.save(name, type, self.db)
     sql = `INSERT INTO ? (name, type) VLAUES (?, ?);`
     DB[:conn].execute(sql, self.db, name, type)
   
